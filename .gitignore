@@ -1,3 +1,13 @@
+# project files
+*.pdf
+*.ipynb
+*.html
+
+img/
+Template/
+takehome1_mu_d_samples.csv
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
