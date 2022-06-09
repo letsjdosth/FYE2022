@@ -1,5 +1,4 @@
 import csv
-from random import seed
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -362,7 +361,7 @@ if __name__=="__main__":
     # print(y.shape)
 
     model1_run = True
-    model2_run = False
+    model2_run = True
 
     if model1_run:
         # model 1
@@ -380,8 +379,8 @@ if __name__=="__main__":
         diag_inst11.set_mc_samples_from_list(model1_mu_1)
         diag_inst11.set_variable_names(["mu1"+str(i) for i in range(1,9)])
         diag_inst11.burnin(3000)
-        # diag_inst11.show_traceplot((2,4))
-        # diag_inst11.show_acf(30, (2,4))
+        diag_inst11.show_traceplot((2,4))
+        diag_inst11.show_acf(30, (2,4))
         diag_inst11.show_hist_superimposed(y_lab="mu1j")
         diag_inst11.print_summaries(round=3)
         
@@ -389,8 +388,8 @@ if __name__=="__main__":
         diag_inst12.set_mc_samples_from_list(model1_mu_2)
         diag_inst12.set_variable_names(["mu2"+str(i) for i in range(1,13)])
         diag_inst12.burnin(3000)
-        # diag_inst12.show_traceplot((3,4))
-        # diag_inst12.show_acf(30, (3,4))
+        diag_inst12.show_traceplot((3,4))
+        diag_inst12.show_acf(30, (3,4))
         diag_inst12.show_hist_superimposed(y_lab="mu2j")
         diag_inst12.print_summaries(round=3)
         
@@ -398,8 +397,8 @@ if __name__=="__main__":
         diag_inst13.set_mc_samples_from_list(model1_others)
         diag_inst13.set_variable_names(["beta1", "beta2", "mu10", "mu20", "tau2", "sigma2"])
         diag_inst13.burnin(3000)
-        # diag_inst13.show_traceplot((2,3))
-        # diag_inst13.show_acf(30, (2,3))
+        diag_inst13.show_traceplot((2,3))
+        diag_inst13.show_acf(30, (2,3))
         diag_inst13.show_hist((2,2),[0,1,2,3])
         diag_inst13.show_hist((1,2),[4,5])
         diag_inst13.print_summaries(round=3)
@@ -461,8 +460,8 @@ if __name__=="__main__":
         diag_inst21.set_mc_samples_from_list(model2_mu_1)
         diag_inst21.set_variable_names(["mu1"+str(i) for i in range(1,9)])
         diag_inst21.burnin(3000)
-        # diag_inst21.show_traceplot((2,4))
-        # diag_inst21.show_acf(30, (2,4))
+        diag_inst21.show_traceplot((2,4))
+        diag_inst21.show_acf(30, (2,4))
         diag_inst21.show_hist_superimposed(y_lab="mu1j")
         diag_inst21.print_summaries(round=3)
 
@@ -470,8 +469,8 @@ if __name__=="__main__":
         diag_inst22.set_mc_samples_from_list(model2_mu_2)
         diag_inst22.set_variable_names(["mu2"+str(i) for i in range(1,13)])
         diag_inst22.burnin(3000)
-        # diag_inst22.show_traceplot((3,4))
-        # diag_inst22.show_acf(30, (3,4))
+        diag_inst22.show_traceplot((3,4))
+        diag_inst22.show_acf(30, (3,4))
         diag_inst22.show_hist_superimposed(y_lab="mu2j")
         diag_inst22.print_summaries(round=3)
             
@@ -479,8 +478,8 @@ if __name__=="__main__":
         diag_inst23.set_mc_samples_from_list(model2_beta_1)
         diag_inst23.set_variable_names(["beta1"+str(i) for i in range(1,9)])
         diag_inst23.burnin(3000)
-        # diag_inst23.show_traceplot((2,4))
-        # diag_inst23.show_acf(30, (2,4))
+        diag_inst23.show_traceplot((2,4))
+        diag_inst23.show_acf(30, (2,4))
         diag_inst23.show_hist_superimposed(y_lab="beta1j")
         diag_inst23.print_summaries(round=3)
 
@@ -488,8 +487,8 @@ if __name__=="__main__":
         diag_inst24.set_mc_samples_from_list(model2_beta_2)
         diag_inst24.set_variable_names(["beta2"+str(i) for i in range(1,13)])
         diag_inst24.burnin(3000)
-        # diag_inst24.show_traceplot((3,4))
-        # diag_inst24.show_acf(30, (3,4))
+        diag_inst24.show_traceplot((3,4))
+        diag_inst24.show_acf(30, (3,4))
         diag_inst24.show_hist_superimposed(y_lab="beta2j")
         diag_inst24.print_summaries(round=3)
 
@@ -497,8 +496,8 @@ if __name__=="__main__":
         diag_inst25.set_mc_samples_from_list(model2_others)
         diag_inst25.set_variable_names(["mu10", "mu20", "gamma1", "gamma2", "tau2", "phi2", "sigma2"])
         diag_inst25.burnin(3000)
-        # diag_inst25.show_traceplot((2,4))
-        # diag_inst25.show_acf(30, (2,4))
+        diag_inst25.show_traceplot((2,4))
+        diag_inst25.show_acf(30, (2,4))
         diag_inst25.show_hist((2,2),[0,1,2,3])
         diag_inst25.show_hist((1,3),[4,5,6])
         diag_inst25.print_summaries(round=3)
