@@ -270,7 +270,7 @@ class MCMC_Diag:
     def show_hist_specific_dim(self, dim_idx, show=False, hist_type="bar"):
         hist_data = self.get_specific_dim_samples(dim_idx)
 
-        plt.hist(hist_data, bins=100, histtype=hist_type)
+        plt.hist(hist_data, bins=100, histtype=hist_type, density=True)
         if self.graphic_use_variable_name:
             plt.ylabel(self.variable_names[dim_idx])
         else:
@@ -285,7 +285,7 @@ class MCMC_Diag:
         if self.graphic_hist_95CI:
             quantile_0_95 = self.get_sample_quantile([0.025, 0.975])[dim_idx]
             x_axis_pts = np.linspace(quantile_0_95[0], quantile_0_95[1], num=100)
-            y_axis_pts = np.zeros(len(x_axis_pts)) + 0.1
+            y_axis_pts = np.zeros(len(x_axis_pts)) + 0.01
             plt.scatter(x_axis_pts, y_axis_pts, color="red", s=10, zorder=2)
 
         if show:
